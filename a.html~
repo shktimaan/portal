@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>/*#form {
+  position: relative; /* labels need this on the their parent element */
+}
+
+/*fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding-top: 30px; /* leave a space to position for the labels */
+}
+
+/*fieldset {display: inline-block; vertical-align: middle;}
+fieldset {display: inline !ie7; /* IE6/7 need display inline after the inline-block rule */}
+/*
+label {
+   position: absolute; 
+   top: 5px; 
+   left: auto; 
+   margin-left: 5px; 
+   font-weight: bold;
+}*/</style>
+</head>
+<body>
+
+<div id="form"> 
+
+  <label>Title1</label>
+  <fieldset>
+    <input value="Lorem Ipsum" /><br />
+    <input value="Lorem Ipsum" /><br />
+    <input value="Lorem Ipsum" />
+  </fieldset>
+
+  <label>Title2</label>
+  <fieldset>
+    <input value="Lorem Ipsum" />
+  </fieldset>
+
+  <label>Title3</label>
+  <fieldset>
+  Lorem Ipsum
+  </fieldset>
+
+</div>
+
+</body>
+</html>
+

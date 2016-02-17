@@ -1,0 +1,351 @@
+	<html >
+<head><title>Registration Page</title>
+
+    <link rel="stylesheet" type="text/css" href="regstyle.css" >
+
+<script type="text/javascript">
+    function branch_change(){
+      // alert("hehe");
+    var x=document.getElementById("huhu");
+    //alert(x.value);
+    var y=document.getElementById("hoha");
+    y.value=x.value;
+    }
+    function set_year(){
+        var x=document.getElementById("reg");
+        var y =x.value;
+        var z=y.slice(2,4);
+        var a=document.getElementById("yr");
+        a.value=z;
+    }
+    function otherHobbies(hobbies) {
+                var shwbox = document.getElementById("shwbox");
+                shwbox.style.display = hobbies.checked ? "block" : "none";
+
+            }
+    		
+    function validate_form1(){
+    	var a=document.getElementById("fname");
+    if(a.value==null||a.value==""){{alert("firstname cant be empty");}}
+    	}
+    	
+    function validate_form2(){
+    	var b=document.getElementById("lname");
+    	if(b.value==null||b.value=="") {alert("lastname cant be empty");}
+    }	
+
+    function validate_form3(){
+    	c=document.getElementById("dob").value;
+    	if(c==null||c==""){alert("date of birth cant be empty"); }}	
+
+    function validate_form4(){
+    	var e=document.getElementById("ad").value;
+    	if(e==null||e==""){alert("Address cant be empty"); }}	
+
+    function validate_form5(){
+    	var f=document.getElementById("ad4").value;
+    	if(f==null||f==""){alert(" pincode cant be empty"); }}	
+
+    function validate_form6(){
+    	var h=document.getElementById("ad5").value;
+    	if(h==null||h==""){alert("contact no. cant be empty");} }
+
+    function validate_form7(){
+    	var c=document.getElementById("reg").value;
+    	if(c.length!=8) {alert("enter a valid registration number");}}
+    	
+    function validate_form8(){
+    	var w=document.getElementById("ad8").value;
+    	if(w==null||w==""){alert("cgpa cant be empty"); }
+    	}
+
+
+    function validate_form9(){
+    	c=document.getElementById("mail");
+    	if(c.value==null||c.value=="")
+    	{alert("email cant be empty");}
+    	
+
+    }
+
+    function validate_form10(){
+    	b=document.getElementById("pwd");
+    	if(b.value==null||b.value=="")
+    	{alert("password cant be empty");}
+    }
+
+    function validate_form11(){
+    	z=document.getElementById("rno");
+    	if(z.value==null||z.value=="")
+    	{alert("Roll no. cant be empty");}
+    	
+    	
+    }
+
+    function validate_form(){
+    	var a=document.getElementById("fname");
+    	var b=document.getElementById("lname");
+    	if(a.value==null||a.value=="")  {alert("firstname cant be empty");}
+    	if(b.value==null||b.value=="") {alert("lastname cant be empty");}
+
+    	 c=document.getElementById("dob").value;
+    	if(c==null||c==""){alert("date of birth cant be empty"); }
+    	var e=document.getElementById("ad").value;
+    	if(e==null||e==""){alert("Address cant be empty"); }
+    	var f=document.getElementById("ad4").value;
+    	if(f==null||f==""){alert(" pincode cant be empty"); }
+    	var h=document.getElementById("ad5").value;
+    	if(h==null||h==""){alert("contact no. cant be empty"); }
+    	var c=document.getElementById("reg").value;
+    	if(c.length!=8) {alert("enter a valid registration number");}
+    	var w=document.getElementById("ad8").value;
+    	if(w==null||w==""){alert("cgpa cant be empty"); }
+    	c=document.getElementById("mail");
+    	b=document.getElementById("pwd");
+    	if(c.value==null||c.value==""||b.value==null||b.value==""){
+        alert("enter valid login credentials");}
+    }
+
+    function password_match(){
+    	var s=document.getElementById("pwd");
+    	var t=document.getElementById("repwd");
+    if(s.value != t.value)  {alert("password not match");
+    return false;
+    	}
+    }
+</script>
+
+
+</head>
+
+<body>
+	
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='file1.html'><span>Home</span></a></li>
+   <li><a href='file3.html'><span>Student</span></a></li>
+   <li><a href='file2.html'><span>Admin</span></a></li>
+    <li><a href='reg.html'><span>New Student</span></a></li>
+   <li class='last'><a href='#'><span>About</span></a></li>
+</ul>
+</div>
+<br><br>
+
+
+    <div id="wrapper" class="header">
+  <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"   /><br><br><br><h1 >Registration Form</h1>
+    </p></div>
+    <hr />
+
+   	<form id="simpleForm" name="form1"  onSubmit="return validate_form(this);" action="dataentry.php" method="post" enctype="multipart/form-data">
+   	<div id="personal">
+    <fieldset >
+            <legend >Personal Information:</legend>
+    <div id="pinfo"><label for="txtFirstName"  >First Name: </label> 
+    <input type="text" name="txtFirstName" value="" id="fname"  onBlur="return validate_form1(this);">
+    
+    
+    <div>
+    <label for="txtMiddleName">Middle Name: </label>
+    
+    <input type="text" name="txtMiddleName" value="">
+    </div>
+	<div>
+    <label for="txtLastName">Last Name:</label>
+    
+    <input type="text" name="txtLastName" value="" id="lname" onBlur="return validate_form2(this);" />
+    
+    </div>
+    
+    <div>
+    <label for="photo">Upload your Photo: </label>
+    <input type="file" name="photo" value="" /><br /></div>
+    
+    <label for="dob">Date of Birth: </label>
+    <input type="date" name="dob" value="" id="dob" onBlur="return validate_form3(this);"/>
+    <br />
+    
+    <div>
+    <label for="male">Gender:</label>
+    Male <input type="radio" name="male"  checked/> Female<input type="radio" name="male" /><br /></div>
+   
+    <label for="dance">Hobbies: </label>
+    Dancing<input type="checkbox" name="Dance" />
+    Singing<input type="checkbox" name="Singing" />
+    Sports<input type="checkbox" name="Sports" />
+    Art<input type="checkbox" name="Art" />
+	  <label for="hobbies">Other
+                <input type="checkbox" id="ohobbies" onClick="otherHobbies(this)">
+            </label>
+
+            <div id="shwbox" style="display: none">
+                <textarea rows="1" cols="25" placeholder="Please Mention here..."></textarea>
+               
+            </div>
+            </label><br><br><br>
+<label for="adderss"> Address Line:</label>
+<textarea rows="5" cols="25" placeholder="Address details" id="ad" onBlur="return validate_form4(this);"></textarea>
+ <br>
+
+          <label for="address5"> State</label>
+<select name="state" id="state">
+                            <option value="">- Select State -</option>
+                                                        <option value="1">
+                            Andhra Pradesh                            </option>
+                                                        <option value="2">
+                            Arunachal Pradesh                            </option>
+                                                        <option value="3">
+                            Assam                            </option>
+                                                        <option value="4">
+                            Bihar                            </option>
+                                                        <option value="5">
+                            Chhattisgarh                            </option>
+                                                        <option value="6">
+                            Goa                            </option>
+                                                        <option value="7">
+                            Gujarat                            </option>
+                                                        <option value="8">
+                            Haryana                            </option>
+                                                        <option value="9">
+                            Himachal Pradesh                            </option>
+                                                        <option value="10">
+                            Jammu and Kashmir                            </option>
+                                                        <option value="11">
+                            Jharkhand                            </option>
+                                                        <option value="12">
+                            Karnataka                            </option>
+                                                        <option value="13">
+                            Kerala                            </option>
+                                                        <option value="14">
+                            Madhya Pradesh                            </option>
+                                                        <option value="15">
+                            Maharashtra                            </option>
+                                                        <option value="16">
+                            Manipur                            </option>
+                                                        <option value="17">
+                            Meghalaya                            </option>
+                                                        <option value="18">
+                            Mizoram                            </option>
+                                                        <option value="19">
+                            Nagaland                            </option>
+                                                        <option value="20">
+                            Odisha                            </option>
+                                                        <option value="37">
+                            Punjab                            </option>
+                                                        <option value="22">
+                            Rajasthan                            </option>
+                                                        <option value="23">
+                            Sikkim                            </option>
+                                                        <option value="24">
+                            Tamil Nadu                            </option>
+                                                        <option value="25">
+                            Telangana                            </option>
+                                                        <option value="26">
+                            Tripura                            </option>
+                                                        <option value="27">
+                            Uttar Pradesh                            </option>
+                                                        <option value="28">
+                            Uttarakhand                            </option>
+                                                        <option value="29">
+                            West Bengal                            </option>
+                                                        <option value="30">
+                            Andaman and Nicobar Islands                            </option>
+                                                        <option value="21">
+                            Chandigarh                            </option>
+                                                        <option value="32">
+                            Dadra and Nagar Haveli                            </option>
+                                                        <option value="33">
+                            Daman and Diu                            </option>
+                                                        <option value="34">
+                            Lakshadweep                            </option>
+                                                        <option value="35">
+                            National Capital Territory of Delhi                            </option>
+                                                        <option value="36">
+                            Puducherry                            </option>
+                                                      </select><br>
+
+
+          <label for="address5"> Pincode:</label>
+<input type="text" placeholder="Pincode." id="ad4" onBlur="return validate_form5(this);">
+
+<br>
+
+          <label for="address6"> Contact No:</label>
+<input type="text" placeholder="ContactNo." id="ad5" onBlur="return validate_form6(this);">
+<br>
+	</div>
+    </fieldset>
+    </div>   <div id="academic">
+    <fieldset>
+        <legend>Academic Information</legend>
+<label for="10th"> 10<sup>th</sup>marks:</label>
+<input type="text" name="a" id="ad6"><br>
+<label for="12th"> 12<sup>th</sup>marks:</label>
+<input type="text" name="b" id="ad7"><br>
+
+    <label for="regno">Registration No. :</label>
+    <input type="text" name="regno" value="" onChange="set_year()" id="reg" onBlur="return validate_form7(this);" />
+<br />
+    
+    
+    <label >Department:</label><select size =1  onchange="branch_change()" id="huhu">
+    
+	<option selected>IT
+	<option>ME
+	<option>CE
+	<option>CH
+	<option>BT
+	<option>MM
+	<option>CS
+	<option>EC
+	<option>EE
+	</select><br />
+	
+    <label for="sem">Semester</label>
+    <select size =1 name="sem">
+	<option selected>none
+	<option>1ST 
+	<option>2nd 
+	<option>3rd 
+	<option>4th 
+	<option>5th 
+	<option>6th 
+	<option>7th 
+	<option>8th 
+	</select><br />
+    
+    <div>
+    <label for="roll">Roll No. :</label>
+         <input type="text" name="yr" size="2" value="13" id="yr"> / <input type="text" name="branch" size="2" value="IT" id="hoha"> / <input type="text" name="roll" size="2" id="rno" onBlur="return validate_form11(this);"> <br>
+<label for="cgp">Cgpa:</label>
+<input type="text" name="d" id="ad8" onBlur="return validate_form8(this);">
+<br>
+    </fieldset>
+    </div>
+
+    <br />
+    <div>
+    <fieldset>
+        <legend>Login Information</legend>
+    <label for="email">Email:</label>
+    <input type="email" name="email" placeholder="abc@email.com" id="mail" onBlur="return validate_form9(this);"/>
+<br />
+
+	<label for="pwd">Password: </label>
+    <input type="password" name="pwd" value=""  id="pwd" onBlur="return validate_form10(this);"/>	
+    <br/>
+    
+    <label for="pwd">Retype Password: </label>
+    <input type="password" name="repwd" value=""  id="repwd" onChange="return password_match();"/>	
+    
+ </fieldset></div>
+	<center><div id="theSubmit">   
+    <input type="submit" name="btnSubmit" value="Submit"/>
+    <input type="reset" name="reset" value="Reset"/>
+
+    </div>
+	</center>
+    </form>
+    
+</body>
+</html>
