@@ -1,7 +1,5 @@
 # portal
 
---------------------***URL Shortener***--------------------
---------------------***=============***--------------------
 
 
          _________________________________________________
@@ -25,7 +23,6 @@ Installation :
 
 3. Import the database sas given in the .sql format (portal.sql) to phpmyadmin.
 
-4.Change the Data Source/Server from 'localhost' to your server name
-   Simlarly for User ID/US_NAME, Password/PASS_W.
+4.Change the Data Source/Server from 'localhost' to your server name.Simlarly for User ID/US_NAME, Password/PASS_W.
 
 5. Run server and open file1.html .
