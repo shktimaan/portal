@@ -28,4 +28,4 @@ Installation :
 4.Change the Data Source/Server from 'localhost' to your server name
    Simlarly for User ID/US_NAME, Password/PASS_W.
 
-5. Run server and open file1.html.
+5. Run server and open file1.html .
