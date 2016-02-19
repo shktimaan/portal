@@ -1,3 +1,4 @@
+
 <html><body>
 <?php
 $user=$_POST["id"];
@@ -6,24 +7,22 @@ include ("connection.php");*/
    $servername = "localhost";
    $username = "root";
    $password = "";
- $connection=mysql_connect("localhost","root","");
- if(!$connection)
-echo "kat gya chutiya";
- $dbname=mysql_select_db("portal",$connection);
- if(!$dbname) echo "<br>kismat jhand";
-
- $sql=mysql_query("SELECT password FROM admin WHERE username='$user' ",$connection);
- if(!$sql){
-   die("Database query failed ".mysql_error());
- }
-while ($row= mysql_fetch_array($sql)) {
-   if($pass===$row["password"]) {
+ $connection=new mysqli("localhost","root","","portal");
+ if ($connection->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+else echo "Connected";
+$result=$connection->query("SELECT password FROM admin WHERE username='$user'");
+while ($row=$result->fetch_assoc()) 
+	{ if($pass===$row["password"]) {
       session_start();
       $_SESSION['sessid']="adminbabu";
       echo "session_start()";
       header("Location: /portal/admin.php");
    }
+	
 }
-
-?></body>
+?>
+</body>
 </html>
+

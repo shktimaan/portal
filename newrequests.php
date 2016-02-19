@@ -1,5 +1,5 @@
 <html>
-<head><title>Admin</title>
+<head><title>Admin</title><link rel="stylesheet" href="css/bootstrap.min.css"> 
  <?php
  session_start();
  if($_SESSION["sessid"]!="adminbabu"){
@@ -143,6 +143,10 @@ position:relative;
 left:80px;
 }
 </style>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body bgcolor=#32cd32>
 
@@ -150,7 +154,7 @@ left:80px;
 <ul>
    <li class='active'><a href='file1.html'><span>Home</span></a></li>
    <li><a href='file3.html'><span>Student</span></a></li>
-   <li><a href='admin.php'><span>Admin</span></a></li>
+   <li><a href='file2.html'><span>Admin</span></a></li>
     <li><a href='r.html'><span>New Student</span></a></li>
     <li><a href='#'><span>About</span></a></li>
    <li class='last'><a href='logout.php'><span>Log Out</span></a></li>
@@ -158,7 +162,7 @@ left:80px;
 </div>
 <br>
  <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><center><br><br><br><h1>Welcome Administrator</h1></p></center>
-<hr><link rel="stylesheet" href="css/bootstrap.min.css"> 
+<hr>
 
 
 <div class="btn-group btn-group-justified" role="group" aria-label="..." style="padding-left:50px; padding-right:50px; " >
@@ -179,9 +183,43 @@ left:80px;
     </ul>
   </div>
 </div>
+<br>
+<?php
+include "connection.php";
 
+echo '<div class="panel panel-default" style="margin-left:25px; margin-right:25px;">';
+echo '<div class="panel-heading">New Requests</div>'; 
+echo '<table class="table">';
+echo '<th>Name</th>';
+echo '<th>Roll NO</th>';
+echo '<th> Email</th>';
+echo "<th >regno</th>";
+echo "<th >contact</th>";
+echo "<th >Semester</th>";
+echo '<th> Action </th>';
+$name=$conn->query("SELECT * FROM student");
+while($rr=$name->fetch_assoc())
+{
+echo '<tr><td>'.$rr["name"]."</td>";
+echo '<td>'.$rr["roll_no"]."</td>";
+echo '<td>'.$rr["email"]."</td>";
+echo '<td>'.$rr["regno"]."</td>";
+echo '<td>'.$rr["contact"]."</td>";
+echo '<td>'.$rr["semester"]."</td>";
+echo '<td>';echo'<button type="button" class="btn btn-default btn-lg">';
+ echo '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept';
+echo'</button>';
+echo "          ";
+echo'<button type="button" class="btn btn-default btn-lg">';
+ echo '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Reject';
+echo'</button></td></tr>';
+
+}
+echo ' </table>';
+echo "</div>";
+?>
 </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<html>
+</html>
