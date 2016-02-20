@@ -1,12 +1,7 @@
 <html>
 <head><title>Admin</title><link rel="stylesheet" href="css/bootstrap.min.css"> 
  <?php
- session_start();
- if($_SESSION["sessid"]!="adminbabu"){
-session_unset();
-session_destroy();
-header("Location: /portal/file1.html");
- }
+ include "adminLoginCheck.php";
  ?>
 <style>
 body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
@@ -145,8 +140,7 @@ left:80px;
 </style>
 
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
 <body bgcolor=#32cd32>
 
@@ -157,7 +151,7 @@ left:80px;
    <li><a href='file2.html'><span>Admin</span></a></li>
     <li><a href='r.html'><span>New Student</span></a></li>
     <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='logout.php'><span>Log Out</span></a></li>
+  <div style="margin-left:91500px;"> <li class='last'><a href='logout.php'><span>Log Out</span></a></li></div>
 </ul>
 </div>
 <br>

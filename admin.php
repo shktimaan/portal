@@ -1,14 +1,66 @@
 <html>
 <head><title>Admin</title>
+<script type="text/javascript">
+function new_req () {
+  alert("function working");
+
+    var xhttp; 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("response").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "newreq.php", true);
+  xhttp.send();
+}
+function show_req () {
+ // alert("function working");
+
+    var xhttp; 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("response").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "showRecords.php", true);
+  xhttp.send();
+}
+function ola () {
+  // body...
+   var xhttp; 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("response").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "deleteselected.php", true);
+  xhttp.send(); 
+}
+/*function check () {
+  // body...
+var a = <?php echo'$_SESSION["tab"] '; ?>
+alert ("a");
+if(a=="newReq"){
+  alert("jugaad works");
+new_req();
+}
+else {
+
+  alert("chap hai");
+}
+function jkb () {
+  // body...
+  alert("ae bhai chal ja");
+}
+}*/
+ </script>
  <?php
- session_start();
- if($_SESSION["sessid"]!="adminbabu"){
-session_unset();
-session_destroy();
-header("Location: /portal/file1.html");
- }
+ include "adminLoginCheck.php";
  ?>
-<style>
+  <style>
 body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @charset "UTF-8";
@@ -160,13 +212,12 @@ left:80px;
  <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><center><br><br><br><h1>Welcome Administrator</h1></p></center>
 <hr><link rel="stylesheet" href="css/bootstrap.min.css"> 
 
-
 <div class="btn-group btn-group-justified" role="group" aria-label="..." style="padding-left:50px; padding-right:50px; " >
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default">Registered Students</button>
+    <button type="button" class="btn btn-default" onClick="return show_req();">Registered Students</button>
   </div>
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default">New Requests</button>
+    <button type="button" class="btn btn-default" onClick="return new_req();" id="newR">New Requests</button>
   </div>
    <div class="btn-group" role="group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -174,14 +225,18 @@ left:80px;
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#">Insert</a></li>
-      <li><a href="#">Delete    </a></li>
+      <li><a href="r.html">Insert</a></li>
+      <li><a href="#" onClick="return ola();">Delete  </a></li>
     </ul>
   </div>
 </div>
+<br>
+<div id="response">
+</div>
+
 
 </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+  <script src="js/jquery.min.js"> </script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <html>
