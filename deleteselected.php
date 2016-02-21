@@ -12,6 +12,7 @@ echo "<th >contact</th>";
 echo "<th >Semester</th>";
 echo '<th> Action </th>';
 $name=$conn->query("SELECT * FROM accepted_student");
+$_SESSION["tab"]="del";
 while($rr=$name->fetch_assoc())
 {
 echo '<tr><td>'.$rr["name"]."</td>";

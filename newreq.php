@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-
+$_SESSION["tab"]="newReq";
 echo '<div class="panel panel-default" style="margin-left:25px; margin-right:25px;">';
 echo '<div class="panel-heading" style="padding-left:600px;">New Requests</div>'; 
 echo '<table class="table">';

@@ -2,12 +2,10 @@
 <head
 ><title>Admin</title>
  <?php
+
  include "adminLoginCheck.php";
- ?> <?php
-  //session_start();
-//  echo($_SESSION["sessid"]);
- // $_SESSION["tab"]="null";
-  ?>
+ //echo $_SESSION["tab"];
+ ?> 
 
 <script type="text/javascript">
 function new_req () {
@@ -57,8 +55,9 @@ if(a=="newReq"){
 //  alert("jugaad works");
 new_req();
 }
-if (a=="del")
+else if (a=="del")
 ola();
+else ;
 }
  </script>
  
