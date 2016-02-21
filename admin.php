@@ -4,8 +4,7 @@
  <?php
 
  include "adminLoginCheck.php";
- //echo $_SESSION["tab"];
- ?> 
+  ?> 
 
 <script type="text/javascript">
 function new_req () {
@@ -48,11 +47,9 @@ function ola () {
 }
 function check () {
   // body...
-  //alert("hoha");
-var a = "<?php echo $_SESSION['tab'] ; ?>";
+ var a = "<?php echo $_SESSION['tab'] ; ?>";
 //alert (a);
 if(a=="newReq"){
-//  alert("jugaad works");
 new_req();
 }
 else if (a=="del")
