@@ -21,7 +21,7 @@ Installation :
 
 2. Import the project to respective server location.
 
-3. Import the database sas given in the .sql format (portal.sql) to phpmyadmin.
+3. Import the database as given in the .sql format (portal.sql) to phpmyadmin.
 
 4.Change the Data Source/Server from 'localhost' to your server name.Simlarly for User ID/US_NAME, Password/PASS_W.
 
