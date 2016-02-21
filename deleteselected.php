@@ -1,18 +1,3 @@
-<script type="text/javascript">
-function del () {
-	// body...
-	var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-              //  document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-            alert("hutiyo ka raja haar gya");
-            }
-        };
-        xmlhttp.open("GET", "deleteselected.php", true);
-        xmlhttp.send();
-}
-</script>
-
 <?php
 include "connection.php";
 
@@ -36,7 +21,7 @@ echo '<td>'.$rr["regno"]."</td>";
 echo '<td>'.$rr["contact"]."</td>";
 echo '<td>'.$rr["semester"]."</td>";
 echo '<td>';
-echo'<a href="#" onClick="return del();"><button type="button" class="btn btn-default btn-lg">';
+echo'<a href="deleteAS.php?id='.$rr["id"].'"><button type="button" class="btn btn-default btn-lg">';
  echo '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete';
 echo'</button></a></td></tr>';
 

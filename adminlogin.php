@@ -17,6 +17,7 @@ while ($row=$result->fetch_assoc())
 	{ if($pass===$row["password"]) {
       session_start();
       $_SESSION['sessid']="adminbabu";
+      $_SESSION['tab']='null';
       echo "session_start()";
       header("Location: /portal/admin.php");
    }

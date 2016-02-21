@@ -1,8 +1,17 @@
 <html>
-<head><title>Admin</title>
+<head
+><title>Admin</title>
+ <?php
+ include "adminLoginCheck.php";
+ ?> <?php
+  //session_start();
+//  echo($_SESSION["sessid"]);
+ // $_SESSION["tab"]="null";
+  ?>
+
 <script type="text/javascript">
 function new_req () {
-  alert("function working");
+  //alert("function working");
 
     var xhttp; 
   xhttp = new XMLHttpRequest();
@@ -39,27 +48,20 @@ function ola () {
   xhttp.open("POST", "deleteselected.php", true);
   xhttp.send(); 
 }
-/*function check () {
+function check () {
   // body...
-var a = <?php echo'$_SESSION["tab"] '; ?>
-alert ("a");
+  //alert("hoha");
+var a = "<?php echo $_SESSION['tab'] ; ?>";
+//alert (a);
 if(a=="newReq"){
-  alert("jugaad works");
+//  alert("jugaad works");
 new_req();
 }
-else {
-
-  alert("chap hai");
+if (a=="del")
+ola();
 }
-function jkb () {
-  // body...
-  alert("ae bhai chal ja");
-}
-}*/
  </script>
- <?php
- include "adminLoginCheck.php";
- ?>
+ 
   <style>
 body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
@@ -196,7 +198,8 @@ left:80px;
 }
 </style>
 </head>
-<body bgcolor=#32cd32>
+<body bgcolor=#32cd32 onLoad="return check();">
+
 
 <div id='cssmenu'>
 <ul>
