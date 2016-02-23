@@ -1,8 +1,7 @@
-	<html >
+<html >
 <head><title>Registration Page</title>
 
     <link rel="stylesheet" type="text/css" href="regstyle.css" >
-
 <script type="text/javascript">
 function branch_change(){
   // alert("hehe");
@@ -25,34 +24,72 @@ function otherHobbies(hobbies) {
         }
         
 function validate_form1(){
-    var a=document.getElementById("fname");
-if(a.value==null||a.value==""){{alert("firstname cant be empty");}}
+	var usernameRegex = /^[a-zA-Z]+$/;
+	var a=document.getElementById("fname");
+	
+	a.value= a.value.charAt(0).toUpperCase() + a.value.slice(1);
+	
+	var validfirstUsername =a.value.match(usernameRegex);
+	//a.value.charAt(0).toUpperCase() + string.slice(1);
+	//a[0].toUpperCase() + s.slice(1);
+	if(validfirstUsername==null||validfirstUsername==""){
+		{alert("Please provide a valid First name");}
+		}
+		
+    }
+	
+	function validate_form1b(){
+		var usernameRegex = /^[a-zA-Z]+$/;
+    var mname=document.getElementById("mname");
+	
+	mname.value= mname.value.charAt(0).toUpperCase() + mname.value.slice(1);
+	
+	var validfirstUsername =mname.value.match(usernameRegex);
+	if(mname.value!=""){
+		if(validfirstUsername==null||validfirstUsername==""){
+		{alert("Please provide a valid Middle name");}
+		}
+	}
     }
     
 function validate_form2(){
+	var usernameRegex = /^[a-zA-Z]+$/;
     var b=document.getElementById("lname");
-if(b.value==null||b.value=="") {alert("lastname cant be empty");}
+	
+	b.value= b.value.charAt(0).toUpperCase() + b.value.slice(1);
+	
+	var validfirstUsername =b.value.match(usernameRegex);
+	if(validfirstUsername==null||validfirstUsername==""){
+		{alert("Please provide a valid Last name");}
+		}
 }   
 
 function validate_form3(){
     c=document.getElementById("dob").value;
-    if(c==null||c==""){alert("date of birth cant be empty"); }} 
+    if(c==null||c==""){alert("Date of Birth cant be empty"); }} 
 
 function validate_form4(){
     var e=document.getElementById("ad").value;
     if(e==null||e==""){alert("Address cant be empty"); }}   
 
 function validate_form5(){
+	var usernameRegex = /^[0-9]+$/;
     var f=document.getElementById("ad4").value;
-    if(f==null||f==""){alert(" pincode cant be empty"); }}  
+	var validfirstUsername =f.match(usernameRegex);
+    if(validfirstUsername==null||validfirstUsername==""){alert(" Invalid Pincode"); }}  
 
 function validate_form6(){
+	var usernameRegex = /^[0-9\-]+$/;
     var h=document.getElementById("ad5").value;
-    if(h==null||h==""){alert("contact no. cant be empty");} }
+    var validfirstUsername =h.match(usernameRegex);
+    if(validfirstUsername==null||validfirstUsername==""){alert("Please provide a valid phone number.");} }
 
 function validate_form7(){
+	var usernameRegex = /^[0-9]+$/;
     var c=document.getElementById("reg").value;
-    if(c.length!=8) {alert("enter a valid registration number");}}
+	var validfirstUsername =c.match(usernameRegex);
+    if(c.length!=8||validfirstUsername==null||validfirstUsername==""){alert(" Invalid Registration Number"); }
+	}
     
 function validate_form8(){
     var w=document.getElementById("ad8").value;
@@ -61,9 +98,11 @@ function validate_form8(){
 
 
 function validate_form9(){
+	var usernameRegex = /\S+@\S+\.\S+/;
     c=document.getElementById("mail");
-    if(c.value==null||c.value=="")
-    {alert("email cant be empty");}
+	var validfirstUsername =c.value.match(usernameRegex);
+    if(c.value==null||c.value==""||validfirstUsername==null||validfirstUsername=="")
+    {alert("Invalid Email");}
     
 
 }
@@ -81,6 +120,26 @@ function validate_form11(){
     
     
 }
+
+
+function get_Age() {
+    var today = new Date();
+    
+    var d = document.getElementById("dob");
+	var birthDate = new Date(d.value);
+	birthDate.value= d.value;
+	var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+	var ages = document.getElementById("age");
+	ages.value = age;
+	
+	
+}
+
+
 
 function validate_form(){
     var a=document.getElementById("fname");
@@ -112,12 +171,35 @@ function password_match(){
 if(s.value != t.value)  {alert("password not match");
 return false;
     }
-}</script>
+}
+
+
+function ChangeCaptcha() {
+	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+	var string_length = 6;
+	var ChangeCaptcha = '';
+	for (var i=0; i<string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		ChangeCaptcha += chars.substring(rnum,rnum+1);
+	}
+	document.getElementById('randomfield').value = ChangeCaptcha;
+}
+function check() {
+if(document.getElementById('CaptchaEnter').value == document.getElementById('randomfield').value ) {
+//window.open('https://www.google.co.in','_self');
+}
+else {
+alert('Please re-check the captcha');
+}
+}
+
+
+</script>
 
 
 </head>
 
-<body>
+<body onLoad="ChangeCaptcha()">
 	
 <div id='cssmenu'>
 <ul>
@@ -141,11 +223,12 @@ return false;
     <fieldset >
             <legend >Personal Information:</legend>
     <div id="pinfo"><label for="txtFirstName">First Name: </label>
+   
     <input type="text" name="txtFirstName" value="" id="fname"  onBlur="return validate_form1(this);">
     
     <div>
     <label for="txtMiddleName">Middle Name: </label>
-    <input type="text" name="txtMiddleName" value=""  >
+    <input type="text" name="txtMiddleName" value="" id="mname" onBlur="return validate_form1b(this)">
     </div>
 	<div>
     <label for="txtLastName">Last Name:</label>
@@ -158,7 +241,10 @@ return false;
     <input type="file" name="photo" value="" /><br /></div>
     
     <label for="dob">Date of Birth: </label>
-    <input type="date" name="dob" value="" id="dob" onBlur="return validate_form3(this);"/><br />
+    <input type="date" name="dob" value="" id="dob" onChange="get_Age()" onBlur="return validate_form3(this);"/><br />
+    
+    <label for="age">Age: </label>
+    <input type="text" name="age" value="" id="age" /><br/>
     
     <div>
     <label for="male">Gender:</label>
@@ -325,11 +411,16 @@ return false;
 	<label for="pwd">Password: </label>
     <input type="password" name="pwd" value=""  id="pwd" onBlur="return validate_form10(this);"/>	<br/>
     <label for="pwd">Retype Password: </label>
-    <input type="password" name="repwd" value=""  id="repwd" onChange="return password_match();"/>  
+    <input type="password" name="repwd" value=""  id="repwd" onChange="return password_match();"/>  <br/>
+    <label for="captcha">Captcha: </label>
+    <input type="text" id="randomfield" disabled>
+    <br/>
+    <label for="enterCaptcha">Enter the Captcha as shown: </label>
+    <input id="CaptchaEnter" size="20" maxlength="6" onBlur="check()"/> 
     
  </fieldset></div>
 	<center><div id="theSubmit">   
-    <input type="submit" name="btnSubmit" value="Submit"/>
+    <input type="submit" name="btnSubmit" value="Submit" onClick="check()"/>
     <input type="reset" name="reset" value="Reset"/>
 
     </div>
