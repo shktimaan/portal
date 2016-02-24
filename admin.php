@@ -203,7 +203,7 @@ left:80px;
    <li><a href='file3.html'><span>Student</span></a></li>
    <li><a href='admin.php'><span>Admin</span></a></li>
     <li><a href='r.html'><span>New Student</span></a></li>
-    <li><a href='#'><span>About</span></a></li>
+    <li><a href='index.html'><span>About</span></a></li>
    <li class='last'><a href='logout.php'><span>Log Out</span></a></li>
 </ul>
 </div>

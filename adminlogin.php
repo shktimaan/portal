@@ -23,6 +23,7 @@ while ($row=$result->fetch_assoc())
    }
 	
 }
+header("Location: /portal/file1.html");
 ?>
 </body>
 </html>
