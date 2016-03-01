@@ -1,8 +1,17 @@
 <html>
-<head><title>Student login</title>
-<style>
-body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+<head>
+    <title>Home</title>
+	<?php
+  include "session.php";
+  ?>
+	<style type="text/css">body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
+    #logo{
+    	float: left;
+    }
+	h1{
+	position:relative;
+	right:170px;
+	}@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @charset "UTF-8";
 /* Base Styles */
 #cssmenu ul,
@@ -110,55 +119,96 @@ body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-fami
   -webkit-box-shadow: inset 0 5px 10px #133e40;
   box-shadow: inset 0 5px 10px #133e40;
 }
-h1{
-position:relative;
-right:170px;
-}
-fieldset{
-/*    alignment-adjust:middle;
-  */  border-radius: 25px;
-
-    margin-left: 150px;
-    margin-right: 150px;
 
 
-}
-legend{
-    font-size: 150%;
+.con img{
+	left: 175px;
+	width:1000px;
+	height: 250px;
+	border:thin;
+	overflow:hidden;
+	position:absolute;
 }
 
-img{
-    float:left;
+
+.img{
+	left:100px;
+	position:absolute;
+	width:800px;
+	height:250px;
+	animation:mm 20s infinite;
+	opacity: 0;
+	}
+	@keyframes mm{
+		10%{opacity:1}
+		45%{opacity:0}
+		}
+		img:nth-child(0){animation-delay: 0s}
+		img:nth-child(1){animation-delay: 5s}
+		img:nth-child(2){animation-delay: 10s}
+		img:nth-child(3){animation-delay: 15s}
+
+
+.icon0{
+	top:465px;
+	left:595px;
+	position:absolute;
+	
+	
+	
 }
-#fp{
-position:relative;
-left:80px;
+
+.icon1{
+	top:465px;
+	left:950px;
+	position:absolute;
+	
 }
-</style>
+
+
+.icon2	{
+	top:465px;
+	left:240px;
+	position:absolute;
+	
+}
+
+
+
+    </style>
 </head>
-<body bgcolor=#32cd32>
-
+<body >
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='file1.html'><span>Home</span></a></li>
-   <li><a href='file3.html'><span>Student</span></a></li>
-   <li><a href='file2.html'><span>Admin</span></a></li>
-    <li><a href='r.html'><span>New Student</span></a></li>
+   <li class='active'><a href='file1.php'><span>Home</span></a></li>
+   <li><a href='file3.php'><span>Student</span></a></li>
+   <li><a href='file2.php'><span>Admin</span></a></li>
+    <li><a href='r.php'><span>New Student</span></a></li>
    <li class='last'><a href='index.html'><span>About</span></a></li>
 </ul>
 </div>
- <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><center><br><br><br><h1>Welcome, Student</h1></p></center>
-	<hr>
-	<form method="POST">
-		<fieldset>
-		<legend>Login Information</legend><center>
-	 Student id:<input type="text" name="id"/><br><br>
-		Password : <input type="password" name="password"/>
-		<br><a href="fp.html"><font size="2" id="fp">Forgot password</font></a>
-	</fieldset>
-	</form><center>
-	<button type="submit">Submit</button>
-	<a href="file1.html"><button >Back</button></a>
-</center>
+	 <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><br><br><br><center><h1>Welcome to Web Portal !!</h1></p></center>
+		
+		<hr>
+        
+        
+          <div class="con">
+    <img src="image/1.jpeg" class="img" />
+    <img src="image/2.jpg" class="img" />
+    <img src="image/3.jpg" class="img" />
+    <img src="image/4.jpg" class="img" />
+  </div>
+        
+
+	<a href="file2.php">	<img src="image/Admin (1).png" class="icon0" alt"admin login" width="150" height="150" > </a>
+
+	<a href="file3.php">	<img src="image/Student.png"  class="icon1" alt="student login" width="150" height="150"></a>
+    
+    
+<a href="r.php">	<img src="image/user_business_person_businessman_man_flat_icon-512.png" class="icon2" alt="Registeration" width="150" height="150" ></a>	
+
 </body>
 </html>

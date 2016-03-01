@@ -4,6 +4,7 @@
    $user=$_POST["id"];
    $pass=$_POST["password"];/*
    include ("connection.php");*/
+   //echo $user;
       $servername = "localhost";
       $username = "root";
       $password = "";
@@ -15,17 +16,18 @@
    $result=$connection->query("SELECT password FROM admin WHERE username='$user'");
    while ($row=$result->fetch_assoc()) 
       { if($pass===$row["password"]) 
-         {
+        {
           session_start();
           $_SESSION['sessid']="adminbabu";
           $_SESSION['tab']='null';
           echo "session_start()";
           header("Location: /portal/admin.php");
-         }
-	
-      }
+
+        }
+	    else{
+header("Location: /portal/file1.php");}
+       }
    echo "Wrong password";
-//header("Location: /portal/file1.html");
 ?>
 </body>
 </html>

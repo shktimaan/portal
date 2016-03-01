@@ -199,10 +199,10 @@ left:80px;
 
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='file1.html'><span>Home</span></a></li>
-   <li><a href='file3.html'><span>Student</span></a></li>
+   <li class='active'><a href='file1.php'><span>Home</span></a></li>
+   <li><a href='file3.php'><span>Student</span></a></li>
    <li><a href='admin.php'><span>Admin</span></a></li>
-    <li><a href='r.html'><span>New Student</span></a></li>
+    <li><a href='r.php'><span>New Student</span></a></li>
     <li><a href='index.html'><span>About</span></a></li>
    <li class='last'><a href='logout.php'><span>Log Out</span></a></li>
 </ul>
@@ -224,7 +224,7 @@ left:80px;
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="r.html">Insert</a></li>
+      <li><a href="r.php">Insert</a></li>
       <li><a href="#" onClick="return ola();">Delete  </a></li>
     </ul>
   </div>

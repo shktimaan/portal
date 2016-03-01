@@ -1,5 +1,17 @@
 <html>
 <head><title>Admin login</title>
+  <?php
+ session_start();
+ if($_SESSION["sessid"]!="adminbabu"){
+session_unset();
+session_destroy();
+//header("Location: /portal/file2.php");
+ }
+ else
+ {
+  header("Location: /portal/admin.php");
+    }
+  ?>
 <style>@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @charset "UTF-8";
 /* Base Styles */
@@ -134,15 +146,19 @@ legend{
 position:relative;
 left:80px;
 }
+
 </style>
+<?php
+include 'session.php';
+?>
 </head>
 <body bgcolor=#32cd32>
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='file1.html'><span>Home</span></a></li>
-   <li><a href='file3.html'><span>Student</span></a></li>
-   <li><a href='file2.html'><span>Admin</span></a></li>
-    <li><a href='r.html'><span>New Student</span></a></li>
+   <li class='active'><a href='file1.php'><span>Home</span></a></li>
+   <li><a href='file3.php'><span>Student</span></a></li>
+   <li><a href='file2.php'><span>Admin</span></a></li>
+    <li><a href='r.php'><span>New Student</span></a></li>
    <li class='last'><a href='index.html'><span>About</span></a></li>
 </ul>
 </div> <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><br><br><br><center><h1>Welcome, Admin </h1></p></center>
@@ -157,7 +173,7 @@ left:80px;
 		<font size="4">Password :</font><input type="password" name="password"/>
 		<br><a href="fp.html"><font size="2" id="fp">Forgot password</font></a>
   </fieldset><br><center><button type="submit">Submit</button> 
-  <a href="file1.html"><button >Back</button></a>
+  <a href="file1.php"><button >Back</button></a>
 </center>
 		</form>
 	</center>

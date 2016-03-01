@@ -203,11 +203,11 @@ alert('Please re-check the captcha');
 	
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='file1.html'><span>Home</span></a></li>
-   <li><a href='file3.html'><span>Student</span></a></li>
-   <li><a href='file2.html'><span>Admin</span></a></li>
-    <li><a href='r.html'><span>New Student</span></a></li>
-   <li class='last'><a href='#'><span>About</span></a></li>
+   <li class='active'><a href='file1.php'><span>Home</span></a></li>
+   <li><a href='file3.php'><span>Student</span></a></li>
+   <li><a href='file2.php'><span>Admin</span></a></li>
+    <li><a href='r.php'><span>New Student</span></a></li>
+   <li class='last'><a href='index.html'><span>About</span></a></li>
 </ul>
 </div>
 <br><br>

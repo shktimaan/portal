@@ -4,7 +4,7 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: /portal/file1.html");
+header("Location: /portal/file1.php");
 ?>
 </body>
 </html>
