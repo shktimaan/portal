@@ -1,6 +1,5 @@
 <html >
 <head><title>Registration Page</title>
-
 <?php
 session_start();
 $_SESSION["sessid"]="newUser";
@@ -21,33 +20,53 @@ function set_year(){
     var a=document.getElementById("yr");
     a.value=z;
 }
+
 function otherHobbies(hobbies) {
             var shwbox = document.getElementById("shwbox");
             shwbox.style.display = hobbies.checked ? "block" : "none";
 
         }
 
+function checkHobby () {
+    // body...
+    var checkedValue =""; 
+var inputElements = document.getElementsByClassName('messageCheckbox');
+for(var i=0; inputElements[i]; ++i){
+      if(inputElements[i].checked){
+            checkedValue+=" ";
+           checkedValue += inputElements[i].value;
+      }
+}
+var other= document.getElementById("otherHobbyText").value;
+checkedValue+=" ";
+checkedValue+=other;
+//alert("hehe");
+//alert(checkedValue);
+var abc=document.getElementById("hobby123");
+abc.value=checkedValue;
+alert(document.getElementById("hobby123").value);
+}        
 function validate_form1(){
 	var usernameRegex = /^[a-zA-Z]+$/;
 	var a=document.getElementById("fname");
-
+	
 	a.value= a.value.charAt(0).toUpperCase() + a.value.slice(1);
-
+	
 	var validfirstUsername =a.value.match(usernameRegex);
 	//a.value.charAt(0).toUpperCase() + string.slice(1);
 	//a[0].toUpperCase() + s.slice(1);
 	if(validfirstUsername==null||validfirstUsername==""){
 		{alert("Please provide a valid First name");}
 		}
-
+		
     }
-
+	
 	function validate_form1b(){
 		var usernameRegex = /^[a-zA-Z]+$/;
     var mname=document.getElementById("mname");
-
+	
 	mname.value= mname.value.charAt(0).toUpperCase() + mname.value.slice(1);
-
+	
 	var validfirstUsername =mname.value.match(usernameRegex);
 	if(mname.value!=""){
 		if(validfirstUsername==null||validfirstUsername==""){
@@ -55,32 +74,32 @@ function validate_form1(){
 		}
 	}
     }
-
+    
 function validate_form2(){
 	var usernameRegex = /^[a-zA-Z]+$/;
     var b=document.getElementById("lname");
-
+	
 	b.value= b.value.charAt(0).toUpperCase() + b.value.slice(1);
-
+	
 	var validfirstUsername =b.value.match(usernameRegex);
 	if(validfirstUsername==null||validfirstUsername==""){
 		{alert("Please provide a valid Last name");}
 		}
-}
+}   
 
 function validate_form3(){
     c=document.getElementById("dob").value;
-    if(c==null||c==""){alert("Date of Birth cant be empty"); }}
+    if(c==null||c==""){alert("Date of Birth cant be empty"); }} 
 
 function validate_form4(){
     var e=document.getElementById("ad").value;
-    if(e==null||e==""){alert("Address cant be empty"); }}
+    if(e==null||e==""){alert("Address cant be empty"); }}   
 
 function validate_form5(){
 	var usernameRegex = /^[0-9]+$/;
     var f=document.getElementById("ad4").value;
 	var validfirstUsername =f.match(usernameRegex);
-    if(validfirstUsername==null||validfirstUsername==""){alert(" Invalid Pincode"); }}
+    if(validfirstUsername==null||validfirstUsername==""){alert(" Invalid Pincode"); }}  
 
 function validate_form6(){
 	var usernameRegex = /^[0-9\-]+$/;
@@ -94,7 +113,7 @@ function validate_form7(){
 	var validfirstUsername =c.match(usernameRegex);
     if(c.length!=8||validfirstUsername==null||validfirstUsername==""){alert(" Invalid Registration Number"); }
 	}
-
+    
 function validate_form8(){
     var w=document.getElementById("ad8").value;
     if(w==null||w==""){alert("cgpa cant be empty"); }
@@ -107,7 +126,7 @@ function validate_form9(){
 	var validfirstUsername =c.value.match(usernameRegex);
     if(c.value==null||c.value==""||validfirstUsername==null||validfirstUsername=="")
     {alert("Invalid Email");}
-
+    
 
 }
 
@@ -121,14 +140,14 @@ function validate_form11(){
     z=document.getElementById("rno");
     if(z.value==null||z.value=="")
     {alert("Roll no. cant be empty");}
-
-
+    
+    
 }
 
 
 function get_Age() {
     var today = new Date();
-
+    
     var d = document.getElementById("dob");
 	var birthDate = new Date(d.value);
 	birthDate.value= d.value;
@@ -140,32 +159,8 @@ function get_Age() {
 	var ages = document.getElementById("age");
 	ages.value = age;
 	
-	if (m<0 ) {
-        if(today.getDate()<birthDate.getDate())
-		{
-			m=11+m;
-		}
-		else
-		m=12+m;
-    }
 	
-	var day = today.getDate()-birthDate.getDate();
-	if (day<0)
-	{
-		day = 30+day;
-	}
-		
-	
-	var months = document.getElementById("month");
-	months.value = m;
-	
-	var days = document.getElementById("day");
-	days.value = day;
-	
-
-
 }
-
 
 
 
@@ -222,32 +217,13 @@ alert('Please re-check the captcha');
 }
 
 
-function previewFile(){
-       var preview = document.getElementById('img'); //selects the query named img
-       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
-       var reader  = new FileReader();
-
-       reader.onloadend = function () {
-           preview.src = reader.result;
-       }
-
-       if (file) {
-           reader.readAsDataURL(file); //reads the data as a URL
-       } else {
-           preview.src = "";
-       }
-  }
-
-  previewFile();
-
-
 </script>
 
 
 </head>
 
 <body onLoad="ChangeCaptcha()">
-
+	
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='file1.php'><span>Home</span></a></li>
@@ -261,26 +237,18 @@ function previewFile(){
 
 
     <div id="wrapper" class="header">
-  <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"   />
-  <br><br><br>
-  <h1 ><div style="margin-left:550px;">Registration Form</div></h1>
-  </p></div>
-  <hr />
+  <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"   /><br><br><br><h1 ><div style="margin-left:550px;">Registration Form</div></h1>
+    </p></div>
+    <hr />
 
    	<form id="simpleForm" name="form1"  onSubmit="return validate_form(this)" action="dataentry.php" method="post" enctype="multipart/form-data" >
    	<div id="personal">
     <fieldset >
             <legend >Personal Information:</legend>
-            
-            
-            <div id="topnavigation" style = "height:100px;width:100px;position:absolute; z-index:-2">
-  <div id="logo" style="width:200px;height:200px; position:absolute; z-index:-1; top:15px;left:55px;"> 
-  <img id="img" src="" height="200" width="200" alt="" onError="this.onerror=null;this.src='image/alter.png';" > </div>
-</div>
-            
     <div id="pinfo"><label for="txtFirstName">First Name: </label>
-
+   
     <input type="text" name="txtFirstName" value="" id="fname"  onBlur="return validate_form1(this);">
+    
     <div>
     <label for="txtMiddleName">Middle Name: </label>
     <input type="text" name="txtMiddleName" value="" id="mname" onBlur="return validate_form1b(this)">
@@ -289,46 +257,39 @@ function previewFile(){
     <label for="txtLastName">Last Name:</label>
     <input type="text" name="txtLastName" value="" id="lname" onBlur="return validate_form2(this);"/>
     </div>
-
+    
     <div>
     <label for="photo">Upload your Photo: </label>
     <input type="hidden" name="MAX_FILE_SIZE" value="9000000" />
-   <input type="file" onChange="previewFile()" name="photo" value=""><br>
-	
-    </div>
-
+    <input type="file" name="photo" value="" /><br /></div>
+    
     <label for="dob">Date of Birth: </label>
     <input type="date" name="dob" value="" id="dob" onChange="get_Age()" onBlur="return validate_form3(this);"/><br />
-
-    <label for="roll">Age :</label>
-    <input type="text" name="age" size="2" value="" id="age" >   Years
-     <input type="text" name="month" size="2" value="" id="month" >    Months
-      <input type="text" name="day" size="2" id="day">Days<br/>
-
+    
+    <label for="age">Age: </label>
+    <input type="text" name="age" value="" id="age" /><br/>
+    
     <div>
     <label for="male">Gender:</label>
     Male <input type="radio" name="male"  value="male"checked/> Female<input type="radio" value="female" name="male" /><br /></div>
-
+   
     <label for="dance">Hobbies: </label>
-    Dancing<input type="checkbox" name="dance" value="Dance"/>
-    Singing<input type="checkbox" name="singing" value="Singing" />
-    Sports<input type="checkbox" name="hobbies" value="Sports"/>
-    Art<input type="checkbox" name="hobbies" value="Art"/><br>
-	 
-     
-     <label for="hobbies">Other:
-      <input type="checkbox" id="ohobbies" name="hobbies"onClick="otherHobbies(this)">
-      </label>      
+    Dancing<input type="checkbox" class="messageCheckbox" name="dance" value="Dance"/>
+    Singing<input type="checkbox" name="singing" class="messageCheckbox" value="Singing" />
+    Sports<input type="checkbox" class="messageCheckbox" name="hobbies" value="Sports"/>
+    Art<input type="checkbox" name="hobbies" class="messageCheckbox" value="Art"/>
+	  <label for="hobbies">Other
+                <input type="checkbox" id="ohobbies" name="hobbies"onClick="otherHobbies(this)">
+            </label>
 
-            <div id="shwbox" style="display: none">
-                <textarea rows="5" cols="25" placeholder="Please Mention here..."></textarea>
-            </div><br><br>
-            
-            
+            <div id="shwbox" style="display: none"> 
+                <textarea rows="5" id="otherHobbyText" cols="25" placeholder="Please Mention here..."></textarea>
+            </div>
+            </label><br><br><br>
           <label for="address"> Address Line1:</label>
-		  <input type="text" placeholder="Street No." name="a1"><br>
-			<label for="adderss1"> Address Line2:</label>
-		<input type="text" placeholder="Street Name." name ="a2"><br>
+<input type="text" placeholder="Street No." name="a1" onFocus="return checkHobby();"><br>
+<label for="adderss1"> Address Line2:</label>
+<input type="text" placeholder="Street Name." name ="a2"><br>
 
           <label for="address4"> City/Town</label>
 <input type="text" placeholder="City." name="a3"><br>
@@ -408,15 +369,16 @@ function previewFile(){
                                                         <option value="Puducherry">
                             Puducherry                            </option>
                                                       </select><br>
-
-
           <label for="address5"> Pincode:</label>
 <input type="text" placeholder="Pincode." id="ad4" onBlur="return validate_form5(this);" name="a6"><br>
 
           <label for="address6"> Contact No:</label>
 <input type="text" placeholder="ContactNo." name="contact" id="ad5" onBlur="return validate_form6(this);"><br>
+
+<input type="hidden" id="hobby123" name="finalHobby" value="tararara">
+
 	</div>
-    </fieldset>
+    </fieldset>     
     </div>   <div id="academic">
     <fieldset>
         <legend>Academic Information</legend>
@@ -427,10 +389,10 @@ function previewFile(){
 
     <label for="regno">Registration No. :</label>
     <input type="text" name="regno" value="" onChange="set_year()" id="reg" onBlur="return validate_form7(this);"/><br />
-
-
+    
+    
     <label >Department:</label><select size =1  onchange="branch_change()" id="huhu" name="dept">
-
+    
 	<option selected value="IT">IT
 	<option value="ME">ME
 	<option value="CE">CE
@@ -441,20 +403,20 @@ function previewFile(){
 	<option value="EC">EC
 	<option value="EE">EE
 	</select><br />
-
+	
     <label for="sem">Semester</label>
     <select size =1 name="sem">
 	<option selected>none
-	<option value="1">1ST
-	<option value="2">2nd
-	<option value="3">3rd
-	<option value="4">4th
-	<option value="5">5th
-	<option value="6">6th
-	<option value="7">7th
-	<option value="8">8th
+	<option value="1">1ST 
+	<option value="2">2nd 
+	<option value="3">3rd 
+	<option value="4">4th 
+	<option value="5">5th 
+	<option value="6">6th 
+	<option value="7">7th 
+	<option value="8">8th 
 	</select><br />
-
+    
     <div>
     <label for="roll">Roll No. :</label>
          <input type="text" name="yr" size="2" value="13" id="yr"> / <input type="text" name="branch" size="2" value="IT" id="hoha"> / <input type="text" name="roll" size="2" id="rno" onBlur="return validate_form11(this);"> <br>
@@ -478,16 +440,16 @@ function previewFile(){
     <input type="text" id="randomfield" disabled>
     <br/>
     <label for="enterCaptcha">Enter the Captcha as shown: </label>
-    <input id="CaptchaEnter" size="20" maxlength="6" onBlur="check()"/>
-
+    <input id="CaptchaEnter" size="20" maxlength="6" onBlur="check()"/> 
+    
  </fieldset></div>
-	<center><div id="theSubmit">
+	<center><div id="theSubmit">   
     <input type="submit" name="btnSubmit" value="Submit" onClick="check()"/>
     <input type="reset" name="reset" value="Reset"/>
 
     </div>
 	</center>
     </form>
-
+    
 </body>
 </html>

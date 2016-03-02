@@ -17,6 +17,7 @@ $lname=$_POST["txtLastName"];
 $name=$fname." ".$mname." ".$lname;
 $date=$_POST["dob"];
 $gender=$_POST["male"];
+//$hobby=$_POST["finalHobby"];
 $address=$_POST["a1"]." ".$_POST["a2"]." ".$_POST["a3"].",".$_POST["state"].","."PIN:".$_POST["a6"]." ";
 $uploaddir = 'photos/';
 $uploadfile = $uploaddir . basename($_FILES['photo']['name']);
@@ -41,13 +42,16 @@ $roll=$_POST["yr"]."/".$_POST["branch"]."/".$_POST["roll"];
 $cgpa=$_POST["d"];
 $email=$_POST["email"];
 $password=$_POST["pwd"];
+//echo $hobby;
+//echo "localeconv()";
 $sql = "INSERT INTO student (name,photoname,dob,gender,hobby,address,contact,10thmarks,12thmarks,regno,dept,semester,roll_no,cgpa,email,password)
 VALUES ('$name','$photoname', '$date','$gender','NULL','$address','$contact','$tenth','$twelfth','$regno','$dept','$sem','$roll','$cgpa','$email','$password')";
 if ($conn->query($sql) === TRUE) {
  ///   echo "New record created successfully";
 echo "string";
 $conn->close();
-header("Location: /portal/file1.html");
+echo $hobby;
+header("Location: /portal/file1.php");
 }
  else {
     echo "Error: " . $sql . "<br>" . $conn->error;

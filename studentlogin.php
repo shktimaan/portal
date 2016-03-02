@@ -12,26 +12,29 @@
       if ($connection->connect_errno) {
       echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
       }
-   else  echo "Connected";
-   $result=$connection->query("SELECT password FROM admin WHERE username='$user'");
+   else  //echo "Connected";
+   $result=$connection->query("SELECT password FROM accepted_student WHERE email='$user'");
    while ($row=$result->fetch_assoc()) 
       { if($pass===$row["password"]) 
         {
           session_start();
-          $_SESSION['sessid']="adminbabu";
+          $_SESSION['sessid']="student";
           $_SESSION['tab']='null';
           echo "session_start()";
-          header("Location: /portal/admin.php");
+          header("Location: /portal/file4.php");
 
         }
-	   else{
+	    else{
         session_start();
         $_SESSION["sessid"]="invalid";
-      header("Location: /portal/file2.php");
+    echo "kuch hua";
+        header("Location: /portal/file3.php");
         }
       }
-    header("Location: /portal/file2.php");
-     
+
+    header("Location: /portal/file3.php");
+        
+   echo "Wrong password";
 ?>
 </body>
 </html>

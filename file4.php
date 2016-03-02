@@ -1,167 +1,67 @@
-<html>
-<head><title>Administrator</title>
-<style>
-body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@charset "UTF-8";
-/* Base Styles */
-#cssmenu ul,
-#cssmenu li,
-#cssmenu a {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  line-height: 1;
-  font-family: 'Lato', sans-serif;
-}
-#cssmenu {
-  border: 1px solid #133e40;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  width: auto;
-}
-#cssmenu ul {
-  zoom: 1;
-  background: #36b0b6;
-  background: -moz-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #36b0b6), color-stop(100%, #2a8a8f));
-  background: -webkit-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
-  background: -o-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
-  background: -ms-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
-  background: linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@top-color', endColorstr='@bottom-color', GradientType=0);
-  padding: 5px 10px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-}
-#cssmenu ul:before {
-  content: '';
-  display: block;
-}
-#cssmenu ul:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-#cssmenu li {
-  float: left;
-  margin: 0 5px 0 0;
-  border: 1px solid transparent;
-}
-#cssmenu li a {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  padding: 8px 15px 9px 15px;
-  display: block;
-  text-decoration: none;
-  color: #ffffff;
-  border: 1px solid transparent;
-  font-size: 16px;
-}
-#cssmenu li:active {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #36b0b6;
-}
-#cssmenu li:active a {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  display: block;
-  background: #1e6468;
-  border: 1px solid #133e40;
-  -moz-box-shadow: inset 0 5px 10px #133e40;
-  -webkit-box-shadow: inset 0 5px 10px #133e40;
-  box-shadow: inset 0 5px 10px #133e40;
-}/*
-#cssmenu li:hover {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #36b0b6;
-}*/
-#cssmenu li:hover a {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  display: block;
-  background: #1e6468;
-  border: 1px solid #133e40;
-  -moz-box-shadow: inset 0 5px 10px #133e40;
-  -webkit-box-shadow: inset 0 5px 10px #133e40;
-  box-shadow: inset 0 5px 10px #133e40;
-}*/
-h1{
-position:relative;
-right:170px;
-}
-fieldset{
-/*    alignment-adjust:middle;
-  */  border-radius: 25px;
 
-    margin-left: 150px;
-    margin-right: 150px;
-
-
-}
-legend{
-    font-size: 150%;
-}
-
-img{
-    float:left;
-}
-#lo{
-/*float:  right;
-*/
-}
-#fp{
-position:relative;
-left:80px;
-}
-</style><link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Student Portal</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
-include 'session.php';
+session_start();
+if($_SESSION["sessid"]!="student")	header("Location: /portal/file3.php");
 ?>
 </head>
-<body>
 
-<div id='cssmenu'>
-<ul>
-   <li class='active'><a href='file1.php'><span>Home</span></a></li>
-   <li><a href='file3.php'><span>Student</span></a></li>
-   <li><a href='file2.php'><span>Admin</span></a></li>
-    <li><a href='r.php'><span>New Student</span></a></li>
-  <li><a href='index.html'><span>About</span></a></li>
-   <li class='last'><a href='#'><span id="lo">Log Out</span></a></li>
-  
-</ul>
-</div>
- <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><center><br><br><br><h1>Welcome Administrator</h1></p></center>
-	<hr>
-<br><br>
+<body class="body">
+	
+	<header class="mainHeader">
+		<img src="image/logo.jpg">
+		<nav><ul>
+			<li class="active"><a href="#">Profile</a></li>
+			<li><a href="#">Assignments</a></li>
+			<li><a href="#">Project</a></li>
+			<li><a href="logout.php">Logout</a></li>
+		</ul></nav>
+	</header>
+		
+	<div class="mainContent">
+		<div class="content">	
+				<article class="topcontent">	
+					<header>
+						<h2><a href="#" rel="bookmark" title="Permalink to this POST TITLE">Second article</a></h2>
+					</header>
+					
+					<footer>
+						<p class="post-info"></p>
+					</footer>
+					
+					<content>
+						<p>STUDENT DETAILS WILL BE DISPLAYED HERE </p>
+						<p>.</p>
+					</content>
+					
+				</article>
 
+				
+		</div>
+			
+				<aside class="top-sidebar">
+					<article>
+					<h2>Top Sidebar</h2>
+					<p>Can be used as a notice board for students</p>
+				    </article>
+				</aside>
+				
+				<aside class="middle-sidebar">
+					<article>
+					<h2>Middle Sidebar</h2>
+					<p>Other Link REFERENCES.</p>
+				    </article>
+				</aside>				
 
+				
+	</div>
+	
 </body>
 </html>

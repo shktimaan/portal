@@ -20,6 +20,10 @@ function new_req () {
   xhttp.open("POST", "newreq.php", true);
   xhttp.send();
 }
+function logout () {
+  // body...
+  alert("You will be logged out");
+}
 function show_req () {
  // alert("function working");
 
@@ -199,7 +203,7 @@ left:80px;
 
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='file1.php'><span>Home</span></a></li>
+   <li class='active' onClick="return logout();"><a href='file1.php'><span>Home</span></a></li>
    <li><a href='file3.php'><span>Student</span></a></li>
    <li><a href='admin.php'><span>Admin</span></a></li>
     <li><a href='r.php'><span>New Student</span></a></li>

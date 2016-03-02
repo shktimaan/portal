@@ -2,15 +2,16 @@
 <head><title>Admin login</title>
   <?php
  session_start();
- if($_SESSION["sessid"]!="adminbabu"){
-session_unset();
-session_destroy();
-//header("Location: /portal/file2.php");
- }
- else
+
+ if($_SESSION["sessid"]=="adminbabu")
  {
   header("Location: /portal/admin.php");
     }
+  elseif ($_SESSION["sessid"]=="invalid") {
+    # code...
+    echo "<script>alert('invalid Login credentials');</script>";
+   // header("Location: /portal/file2.php");;
+  }
   ?>
 <style>@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @charset "UTF-8";
@@ -148,9 +149,7 @@ left:80px;
 }
 
 </style>
-<?php
-include 'session.php';
-?>
+
 </head>
 <body bgcolor=#32cd32>
 <div id='cssmenu'>

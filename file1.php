@@ -2,7 +2,9 @@
 <head>
     <title>Home</title>
 	<?php
-  include "session.php";
+session_start();
+$_SESSION["sessid"]="newUser";
+
   ?>
 	<style type="text/css">body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-family:Tahoma, Geneva, sans-serif;}
     #logo{

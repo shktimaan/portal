@@ -1,7 +1,7 @@
 <html>
 <head><title>Student login</title>
 <?php
-include 'session.php';
+session_start();
 ?>
 <style>
 
@@ -139,6 +139,18 @@ position:relative;
 left:80px;
 }
 </style>
+<?php
+
+ if($_SESSION["sessid"]=="student")
+ {
+  header("Location: /portal/file4.php");
+    }
+  elseif ($_SESSION["sessid"]=="invalid") {
+    # code...
+    echo "<script>alert('invalid Login credentials');</script>";
+   // header("Location: /portal/file2.php");;
+  }
+  ?>
 </head>
 <body bgcolor=#32cd32>
 
@@ -153,16 +165,16 @@ left:80px;
 </div>
  <p> <img src="image/logo.jpg" width=300 height="130" alt="Student Information System Logo"  id="logo"/><center><br><br><br><h1>Welcome, Student</h1></p></center>
 	<hr>
-	<form method="POST">
+	<form method="POST" action="studentlogin.php">
 		<fieldset>
-		<legend>Login Information</legend><center>
-	 Student id:<input type="text" name="id"/><br><br>
-		Password : <input type="password" name="password"/>
-		<br><a href="fp.html"><font size="2" id="fp">Forgot password</font></a>
-	</fieldset>
-	</form><center>
-	<button type="submit">Submit</button>
-	<a href="file1.php"><button >Back</button></a>
+  <legend>Login Information</legend>
+<center>  <font size="4"> Student id :</font><input type="text" name="id"/><br><br>
+    <font size="4">Password :</font><input type="password" name="password"/>
+    <br><a href="fp.html"><font size="2" id="fp">Forgot password</font></a>
+  </fieldset><br><center><button type="submit">Submit</button> 
+  <a href="file1.php"><button >Back</button></a>
 </center>
+    </form>
+  </center>
 </body>
 </html>
