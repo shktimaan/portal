@@ -49,6 +49,19 @@ function ola () {
   xhttp.open("POST", "deleteselected.php", true);
   xhttp.send(); 
 }
+
+function note () {
+  // body...
+   var xhttp; 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("response").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "setnotice.php", true);
+  xhttp.send(); 
+}
 function check () {
   // body...
  var a = "<?php echo $_SESSION['tab'] ; ?>";
@@ -174,14 +187,13 @@ body{background:url(image/bck2.jpg) center fixed; margin:0; padding:0; font-fami
 }
 h1{
 position:relative;
-right:170px;
+ right:170px;
 }
 fieldset{
-/*    alignment-adjust:middle;
-  */  border-radius: 25px;
+  border-radius: 25px;
 
-    margin-left: 150px;
-    margin-right: 150px;
+   margin-left: 150px;
+   margin-right: 150px;
 
 
 }
@@ -230,6 +242,8 @@ left:80px;
     <ul class="dropdown-menu">
       <li><a href="r.php">Insert</a></li>
       <li><a href="#" onClick="return ola();">Delete  </a></li>
+      <li><a href="#" onClick="return note();">Set a Notice  </a></li>
+
     </ul>
   </div>
 </div>

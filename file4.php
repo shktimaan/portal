@@ -58,12 +58,12 @@ echo'</div>';
 
 echo '<div class="panel panel-default" style="margin-left:25px; margin-right:25px;">';
 echo '<div class="panel-heading "style="padding-left:540px;">Links and References</div>';
-echo '<h4><ul>=><a href="#">HTML Reference</a>  </ul><br>';
-echo '<ul>=><a href="#">CSS Reference</a>  </ul><br>';
-echo '<ul>=><a href="#">PHP Reference</a>  </ul><br>';
-echo '<ul>=><a href="#">JAVASCRIPT Reference</a>  </ul><br>';
-echo '<ul>=><a href="#">BOOTSTRAP Reference</a>  </ul><br>';
-echo '<ul>=><a href="#">AJAX Reference</a>  </ul><br>';
+echo '<h4><ul>=><a href="http://www.w3schools.com/html">HTML Reference</a>  </ul><br>';
+echo '<ul>=><a href="http://www.w3schools.com/css">CSS Reference</a>  </ul><br>';
+echo '<ul>=><a href="http://www.w3schools.com/php">PHP Reference</a>  </ul><br>';
+echo '<ul>=><a href="http://www.w3schools.com/js">JAVASCRIPT Reference</a>  </ul><br>';
+echo '<ul>=><a href="http://www.w3schools.com/bootstrap">BOOTSTRAP Reference</a>  </ul><br>';
+echo '<ul>=><a href="http://www.w3schools.com/ajax">AJAX Reference</a>  </ul><br>';
 echo "</h4></div>"; 
     ?>
    </div>
