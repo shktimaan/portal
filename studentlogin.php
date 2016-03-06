@@ -20,6 +20,7 @@
           session_start();
           $_SESSION['sessid']="student";
           $_SESSION['tab']='null';
+          $_SESSION['email']=$user;
           echo "session_start()";
           header("Location: /portal/file4.php");
 

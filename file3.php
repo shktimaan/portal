@@ -172,9 +172,9 @@ left:80px;
     <font size="4">Password :</font><input type="password" name="password"/>
     <br><a href="fp.html"><font size="2" id="fp">Forgot password</font></a>
   </fieldset><br><center><button type="submit">Submit</button> 
-  <a href="file1.php"><button >Back</button></a>
-</center>
+  <a href="file1.php"><button type="button">Back</button></a>
+ </center>
     </form>
-  </center>
+ </center>
 </body>
 </html>
