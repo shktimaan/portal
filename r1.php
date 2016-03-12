@@ -24,168 +24,83 @@ function set_year(){
 function otherHobbies(hobbies) {
             var shwbox = document.getElementById("shwbox");
             shwbox.style.display = hobbies.checked ? "block" : "none";
-
         }
-
 function validate_form1(){
 	var usernameRegex = /^[a-zA-Z]+$/;
 	var a=document.getElementById("fname");
-
 	a.value= a.value.charAt(0).toUpperCase() + a.value.slice(1);
-
 	var validfirstUsername =a.value.match(usernameRegex);
 	//a.value.charAt(0).toUpperCase() + string.slice(1);
 	//a[0].toUpperCase() + s.slice(1);
 	if(validfirstUsername==null||validfirstUsername==""){
-		{alert("Please provide a valid First name");
-		a.focus();
-		return false;}
+		{alert("Please provide a valid First name");}
 		}
-
     }
-
 	function validate_form1b(){
 		var usernameRegex = /^[a-zA-Z]+$/;
     var mname=document.getElementById("mname");
-
 	mname.value= mname.value.charAt(0).toUpperCase() + mname.value.slice(1);
-
 	var validfirstUsername =mname.value.match(usernameRegex);
 	if(mname.value!=""){
 		if(validfirstUsername==null||validfirstUsername==""){
-		{alert("Please provide a valid Middle name");
-		mname.focus();
-		return false;}
+		{alert("Please provide a valid Middle name");}
 		}
 	}
     }
-
 function validate_form2(){
 	var usernameRegex = /^[a-zA-Z]+$/;
     var b=document.getElementById("lname");
-
 	b.value= b.value.charAt(0).toUpperCase() + b.value.slice(1);
-
 	var validfirstUsername =b.value.match(usernameRegex);
 	if(validfirstUsername==null||validfirstUsername==""){
-		{alert("Please provide a valid Last name");
-		b.focus();
-		return false;}
+		{alert("Please provide a valid Last name");}
 		}
 }
-
 function validate_form3(){
     c=document.getElementById("dob").value;
-    if(c==null||c==""){alert("Date of Birth cant be empty"); 
-	c.focus();
-	return false;}}
-
+    if(c==null||c==""){alert("Date of Birth cant be empty"); }}
 function validate_form4(){
     var e=document.getElementById("ad").value;
-    if(e==null||e==""){alert("Address cant be empty");
- }}
-
+    if(e==null||e==""){alert("Address cant be empty"); }}
 function validate_form5(){
 	var usernameRegex = /^[0-9]+$/;
     var f=document.getElementById("ad4").value;
 	var validfirstUsername =f.match(usernameRegex);
-    if(validfirstUsername==null||validfirstUsername==""){alert(" Invalid Pincode"); 
-	}}
-
+    if(validfirstUsername==null||validfirstUsername==""){alert(" Invalid Pincode"); }}
 function validate_form6(){
 	var usernameRegex = /^[0-9\-]+$/;
     var h=document.getElementById("ad5").value;
     var validfirstUsername =h.match(usernameRegex);
-    if(validfirstUsername==null||validfirstUsername==""){alert("Please provide a valid phone number.");
-	} }
-
+    if(validfirstUsername==null||validfirstUsername==""){alert("Please provide a valid phone number.");} }
 function validate_form7(){
 	var usernameRegex = /^[0-9]+$/;
     var c=document.getElementById("reg").value;
 	var validfirstUsername =c.match(usernameRegex);
-    if(c.length!=8||validfirstUsername==null||validfirstUsername==""){alert(" Invalid Registration Number");
-	c.focus();
-	return false; }
+    if(c.length!=8||validfirstUsername==null||validfirstUsername==""){alert(" Invalid Registration Number"); }
 	}
-
 function validate_form8(){
     var w=document.getElementById("ad8").value;
-    if(w==null||w==""){alert("cgpa cant be empty"); 
-	w.focus();
-	return false;}
+    if(w==null||w==""){alert("cgpa cant be empty"); }
     }
-
-
 function validate_form9(){
 	var usernameRegex = /\S+@\S+\.\S+/;
     c=document.getElementById("mail");
 	var validfirstUsername =c.value.match(usernameRegex);
     if(c.value==null||c.value==""||validfirstUsername==null||validfirstUsername=="")
-    {alert("Invalid Email");
-	c.focus();
-	return false;}
-
-
+    {alert("Invalid Email");}
 }
-
 function validate_form10(){
     b=document.getElementById("pwd");
     if(b.value==null||b.value=="")
-    {alert("password cant be empty");
-	b.focus();
-	return false;}
-	
-
-    if(b.value != "") {
-      if(b.value.length < 6) {
-        alert("Error: Password must contain at least six characters!");
-        b.focus();
-        return false;
-      }
-      
-      re = /[0-9]/;
-      if(!re.test(b.value)) {
-        alert("Error: password must contain at least one number (0-9)!");
-        b.focus();
-        return false;
-      }
-      re = /[a-z]/;
-      if(!re.test(b.value)) {
-        alert("Error: password must contain at least one lowercase letter (a-z)!");
-        b.focus();
-        return false;
-      }
-      re = /[A-Z]/;
-      if(!re.test(b.value)) {
-        alert("Error: password must contain at least one uppercase letter (A-Z)!");
-        b.focus();
-        return false;
-      }
-	  
-	  
-	  
-    } else {
-      alert("Error: Please check that you've entered and confirmed your password!");
-      b.focus();
-      return false;
-    
-  }
-	
-	
+    {alert("password cant be empty");}
 }
-
 function validate_form11(){
     z=document.getElementById("rno");
     if(z.value==null||z.value=="")
     {alert("Roll no. cant be empty");}
-
-
 }
-
-
 function get_Age() {
     var today = new Date();
-
     var d = document.getElementById("dob");
 	var birthDate = new Date(d.value);
 	birthDate.value= d.value;
@@ -219,19 +134,12 @@ function get_Age() {
 	var days = document.getElementById("day");
 	days.value = day;
 	
-
-
 }
-
-
-
-
 function validate_form(){
     var a=document.getElementById("fname");
     var b=document.getElementById("lname");
     if(a.value==null||a.value=="")  {alert("firstname cant be empty");}
     if(b.value==null||b.value=="") {alert("lastname cant be empty");}
-
      c=document.getElementById("dob").value;
     if(c==null||c==""){alert("date of birth cant be empty"); }
     var e=document.getElementById("ad").value;
@@ -249,7 +157,6 @@ function validate_form(){
     if(c.value==null||c.value==""||b.value==null||b.value==""){
     alert("enter valid login credentials");}
 }
-
 function password_match(){
     var s=document.getElementById("pwd");
     var t=document.getElementById("repwd");
@@ -257,8 +164,6 @@ if(s.value != t.value)  {alert("password not match");
 return false;
     }
 }
-
-
 function ChangeCaptcha() {
 	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
 	var string_length = 6;
@@ -277,34 +182,20 @@ else {
 alert('Please re-check the captcha');
 }
 }
-
-
-function reloadCaptcha()
-{
-img = document.getElementById('captcha1');
-img.src = ChangeCaptcha();
-}
-
-
 function previewFile(){
        var preview = document.getElementById('img'); //selects the query named img
        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
        var reader  = new FileReader();
-
        reader.onloadend = function () {
            preview.src = reader.result;
        }
-
        if (file) {
            reader.readAsDataURL(file); //reads the data as a URL
        } else {
            preview.src = "";
        }
   }
-
   previewFile();
-
-
 </script>
 
 
@@ -338,7 +229,7 @@ function previewFile(){
             
             
             <div id="topnavigation" style = "height:100px;width:100px;position:absolute; z-index:-2">
-  <div id="logo" style="width:200px;height:200px; position:absolute; z-index:-1; top:10px;left:800px;"> 
+  <div id="logo" style="width:200px;height:200px; position:absolute; z-index:-1; top:15px;left:55px;"> 
   <img id="img" src="" height="200" width="200" alt="" onError="this.onerror=null;this.src='image/alter.png';" > </div>
 </div>
             
@@ -481,10 +372,8 @@ function previewFile(){
 <input type="text" placeholder="ContactNo." name="contact" id="ad5" onBlur="return validate_form6(this);"><br>
 	</div>
     </fieldset>
-    </div>   
-    
-    
-    <div id="academic"><fieldset>
+    </div>   <div id="academic">
+    <fieldset>
         <legend>Academic Information</legend>
 <label for="10th"> 10<sup>th</sup>marks:</label>
 <input type="text" name="a"><br>
@@ -532,20 +421,16 @@ function previewFile(){
     <br />
     <div>
     <fieldset>
-        <legend>Login Information</legend>        
-        
+        <legend>Login Information</legend>
     <label for="email">Email: </label>
     <input type="email" name="email" placeholder="abc@email.com" id="mail" onBlur="return validate_form9(this);"/><br />
 
 	<label for="pwd">Password: </label>
     <input type="password" name="pwd" value=""  id="pwd" onBlur="return validate_form10(this);"/>	<br/>
-    
     <label for="pwd">Retype Password: </label>
     <input type="password" name="repwd" value=""  id="repwd" onChange="return password_match();"/>  <br/>
-    
     <label for="captcha">Captcha: </label>
-    <input type="text" id="randomfield" >
-  <img  id="captcha1" src="image/refresh.jpeg" style="float:right;padding-right:250px;"height="50" width="50" alt="Refresh Captcha" onError="this.src='image/refresh.jpeg';" onClick="reloadCaptcha()"/>
+    <input type="text" id="randomfield" disabled>
     <br/>
     <label for="enterCaptcha">Enter the Captcha as shown: </label>
     <input id="CaptchaEnter" size="20" maxlength="6" onBlur="check()"/>

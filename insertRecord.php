@@ -25,10 +25,11 @@ $sem=$row["semester"];
 $roll=$row["roll_no"];
 $cgpa=$row["cgpa"];
 $email=$row["email"];
+$hobby=$row["hobby"];
 $password=$row["password"];
 $_SESSION["tab"]="newReq";
 $sql = "INSERT INTO accepted_student (name,photoname,dob,gender,hobby,address,contact,10thmarks,12thmarks,regno,dept,semester,roll_no,cgpa,email,password)
-VALUES ('$name','$photoname', '$date','$gender','NULL','$address','$contact','$tenth','$twelfth','$regno','$dept','$sem','$roll','$cgpa','$email','$password')";
+VALUES ('$name','$photoname', '$date','$gender','$hobby','$address','$contact','$tenth','$twelfth','$regno','$dept','$sem','$roll','$cgpa','$email','$password')";
 if ($connection->query($sql) === TRUE) {
 echo "string";
 $del="DELETE FROM student WHERE id = $id";

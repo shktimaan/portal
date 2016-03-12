@@ -10,7 +10,7 @@
 <?php
 session_start();
 include 'connection.php';
-//if($_SESSION["sessid"]!="student")	header("Location: /portal/file3.php");
+if($_SESSION["sessid"]!="student")	header("Location: /portal/file3.php");
 $user=$_SESSION["email"];
 $record=$conn->query("SELECT * from accepted_student where email='$user' ");
 $rr=$record->fetch_assoc();

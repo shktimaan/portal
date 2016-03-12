@@ -22,7 +22,12 @@ function new_req () {
 }
 function logout () {
   // body...
-  alert("To Log In as a student first logout as the Admin");
+  var r=confirm("You will be logged out as admin");
+  if (r==false){
+    //document.getElementById("")
+  //alert("oh yeah");
+ window.location.assign("portal/admin.php");}
+
 }
 function show_req () {
  // alert("function working");
@@ -216,9 +221,9 @@ left:80px;
 <div id='cssmenu'>
 <ul>
    <li class='active' ><a href='file1.php'><span>Home</span></a></li>
-   <li><a href='file3.php' onClick="return logout();"><span>Student</span></a></li>
+   <li><a href='file3.php' ><span>Student</span></a></li>
    <li><a href='admin.php'><span>Admin</span></a></li>
-    <li><a href='r.php'><span>New Student</span></a></li>
+    <li><a href='r.php' onClick="return logout();"><span>New Student</span></a></li>
     <li><a href='index.html'><span>About</span></a></li>
    <li class='last'><a href='logout.php'><span>Log Out</span></a></li>
 </ul>
