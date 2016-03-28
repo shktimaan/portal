@@ -1,11 +1,11 @@
 <html>
 <body>
 <?php
-echo"betu <br>";
+//echo"betu <br>";
 $servername = "localhost";
    $username = "root";
    $password = "";
-   $dbname = "portal";
+   $dbname = "portalgr8";
    $conn = new mysqli($servername, $username, $password, $dbname);
    // Check connection
    if ($conn->connect_error) {
@@ -17,7 +17,7 @@ $lname=$_POST["txtLastName"];
 $name=$fname." ".$mname." ".$lname;
 $date=$_POST["dob"];
 $gender=$_POST["male"];
-$hobby="Dance Singing Archery";
+$hobby=$_POST["finalHobby"];
 $address=$_POST["a1"]." ".$_POST["a2"]." ".$_POST["a3"].",".$_POST["state"].","."PIN:".$_POST["a6"]." ";
 $uploaddir = 'photos/';
 $uploadfile = $uploaddir . basename($_FILES['photo']['name']);
@@ -50,12 +50,13 @@ if ($conn->query($sql) === TRUE) {
  ///   echo "New record created successfully";
 //echo "string";
 $conn->close();
-echo $hobby;
+//echo $hobby;
 
 header("Location: /portal/file1.php");
 }
  else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+  //  echo "Error: " . $sql . "<br>" . $conn->error."<br>";
+    die("Go Back and Try again ,<br> Duplicate Records can't be inserted. ");
 }//echo $gender;
 ?>
 </body>

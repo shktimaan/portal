@@ -8,7 +8,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "";
-      $connection=new mysqli("localhost","root","","portal");
+      $connection=new mysqli("localhost","root","","portalgr8");
       if ($connection->connect_errno) {
       echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
       }

@@ -23,7 +23,7 @@ $note=$conn->query("SELECT * from notices");
   <div id="sb" style="margin: 50px;">
   <img src="image/logo.jpg" style="width: 20%;" ><hr>
     <!-- Nav tabs -->
-  <div style="background-color: black; border-radius:10px;">
+  <div style="background-color: lightgrey; border-radius:10px;">
   <ul class="nav nav-tabs" role="tablist" >
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>

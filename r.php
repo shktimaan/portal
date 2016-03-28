@@ -37,10 +37,12 @@ function validate_form1(){
 	//a.value.charAt(0).toUpperCase() + string.slice(1);
 	//a[0].toUpperCase() + s.slice(1);
 	if(validfirstUsername==null||validfirstUsername==""){
-		{alert("Please provide a valid First name");
+		
+    alert("Please provide a valid First name");
 		a.focus();
-		return false;}
-		}
+		return false;
+  }
+		
 
     }
 
@@ -53,11 +55,11 @@ function validate_form1(){
 	var validfirstUsername =mname.value.match(usernameRegex);
 	if(mname.value!=""){
 		if(validfirstUsername==null||validfirstUsername==""){
-		{alert("Please provide a valid Middle name");
+		alert("Please provide a valid Middle name");
 		mname.focus();
 		return false;}
 		}
-	}
+	
     }
 
 function validate_form2(){
@@ -67,18 +69,19 @@ function validate_form2(){
 	b.value= b.value.charAt(0).toUpperCase() + b.value.slice(1);
 
 	var validfirstUsername =b.value.match(usernameRegex);
-	if(validfirstUsername==null||validfirstUsername==""){
+	if(validfirstUsername==null||validfirstUsername=="")
 		{alert("Please provide a valid Last name");
 		b.focus();
 		return false;}
-		}
+		
 }
 
 function validate_form3(){
     c=document.getElementById("dob").value;
     if(c==null||c==""){alert("Date of Birth cant be empty"); 
-	c.focus();
-	return false;}}
+	//c.focus();
+	return false;}
+}
 
 function validate_form4(){
     var e=document.getElementById("ad").value;
@@ -104,14 +107,14 @@ function validate_form7(){
     var c=document.getElementById("reg").value;
 	var validfirstUsername =c.match(usernameRegex);
     if(c.length!=8||validfirstUsername==null||validfirstUsername==""){alert(" Invalid Registration Number");
-	c.focus();
+	//c.focus();
 	return false; }
 	}
 
 function validate_form8(){
     var w=document.getElementById("ad8").value;
     if(w==null||w==""){alert("cgpa cant be empty"); 
-	w.focus();
+	//w.focus();
 	return false;}
     }
 
@@ -164,15 +167,32 @@ function validate_form10(){
 	  
 	  
 	  
-    } else {
+  }
+     else {
       alert("Error: Please check that you've entered and confirmed your password!");
       b.focus();
       return false;
-    
-  }
-	
-	
+      }	
 }
+function checkHobby () {
+    // body...
+    var checkedValue =""; 
+var inputElements = document.getElementsByClassName('messageCheckbox');
+for(var i=0; inputElements[i]; ++i){
+      if(inputElements[i].checked){
+            checkedValue+=" ";
+           checkedValue += inputElements[i].value;
+      }
+}
+var other= document.getElementById("otherHobbyText").value;
+checkedValue+=" ";
+checkedValue+=other;
+//alert("hehe");
+//alert(checkedValue);
+var abc=document.getElementById("hobby123");
+abc.value=checkedValue;
+alert(document.getElementById("hobby123").value);
+}        
 
 function validate_form11(){
     z=document.getElementById("rno");
@@ -286,7 +306,7 @@ img.src = ChangeCaptcha();
 }
 
 
-function previewFile(){
+  function previewFile(){
        var preview = document.getElementById('img'); //selects the query named img
        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
        var reader  = new FileReader();
@@ -303,7 +323,6 @@ function previewFile(){
   }
 
   previewFile();
-
 
 </script>
 
@@ -357,7 +376,7 @@ function previewFile(){
     <div>
     <label for="photo">Upload your Photo: </label>
     <input type="hidden" name="MAX_FILE_SIZE" value="9000000" />
-   <input type="file" onChange="previewFile()" name="photo" value=""><br>
+   <input type="file" onChange="previewFile()" onClick="alert('Should Be Less Than 2 M.B.');"name="photo" ><br>
 	
     </div>
 
@@ -373,24 +392,26 @@ function previewFile(){
     <label for="male">Gender:</label>
     Male <input type="radio" name="male"  value="male"checked/> Female<input type="radio" value="female" name="male" /><br /></div>
 
-    <label for="dance">Hobbies: </label>
-    Dancing<input type="checkbox" name="dance" value="Dance"/>
-    Singing<input type="checkbox" name="singing" value="Singing" />
-    Sports<input type="checkbox" name="hobbies" value="Sports"/>
-    Art<input type="checkbox" name="hobbies" value="Art"/><br>
-	 
-     
-     <label for="hobbies">Other:
-      <input type="checkbox" id="ohobbies" name="hobbies"onClick="otherHobbies(this)">
-      </label>      
+   
+      <label for="dance">Hobbies: </label>
+      Dancing<input type="checkbox" class="messageCheckbox" name="dance" value="Dancing"/>
+      Singing<input type="checkbox" name="singing" class="messageCheckbox" value="Singing" />
+      Sports<input type="checkbox" class="messageCheckbox" name="hobbies" value="Sports"/>
+      Art<input type="checkbox" name="hobbies" class="messageCheckbox" value="Art"/>
+      <label for="hobbies">Other
+                  <input type="checkbox" id="ohobbies" name="hobbies"onClick="otherHobbies(this)">
+              </label>
 
-            <div id="shwbox" style="display: none">
-                <textarea rows="5" cols="25" placeholder="Please Mention here..."></textarea>
-            </div><br><br>
-            
+              <div id="shwbox" style="display: none"> 
+                  <textarea rows="5" id="otherHobbyText" cols="25" placeholder="Please Mention here..."></textarea>
+              </div>
+              </label><br><br><br>
+                
+  <input type="hidden" id="hobby123" name="finalHobby" value="tararara">
+
             
           <label for="address"> Address Line1:</label>
-		  <input type="text" placeholder="Street No." name="a1"><br>
+		  <input type="text" placeholder="Street No." name="a1" onFocus="return checkHobby();"><br>
 			<label for="adderss1"> Address Line2:</label>
 		<input type="text" placeholder="Street Name." name ="a2"><br>
 

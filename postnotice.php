@@ -1,5 +1,5 @@
 <?php
-echo"wow";
+//echo"wow";
 include "connection.php";
 //echo $_POST["area"];
 $note=$_POST["area"];

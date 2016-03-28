@@ -4,12 +4,12 @@ session_start();
 ?>
 
 <?php
-	echo $id;
-	$connection=new mysqli("localhost","root","","portal");
+	//echo $id;
+	$connection=new mysqli("localhost","root","","portalgr8");
  if ($connection->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-else echo "Connected";
+//else echo "Connected";
 $result=$connection->query("SELECT * FROM student WHERE id='$id'");
 $row=$result->fetch_assoc();$name=$row["name"];
 $photoname=$row["photoname"];
@@ -31,7 +31,7 @@ $_SESSION["tab"]="newReq";
 $sql = "INSERT INTO accepted_student (name,photoname,dob,gender,hobby,address,contact,10thmarks,12thmarks,regno,dept,semester,roll_no,cgpa,email,password)
 VALUES ('$name','$photoname', '$date','$gender','$hobby','$address','$contact','$tenth','$twelfth','$regno','$dept','$sem','$roll','$cgpa','$email','$password')";
 if ($connection->query($sql) === TRUE) {
-echo "string";
+//echo "string";
 $del="DELETE FROM student WHERE id = $id";
 	if($connection->query($del)===TRUE){
 
@@ -42,7 +42,8 @@ header("Location: /portal/admin.php");
 }
  else {
     echo "Error: " . $sql . "<br>" . $connection->error;
-}echo $gender;
+    die("<br>Duplicate Records Can't Be and Should Not Be Inserted <br> Go Back and Try Again");
+}//echo $gender;
 
 
 	

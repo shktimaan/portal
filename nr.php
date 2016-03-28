@@ -274,7 +274,7 @@ alert('Please re-check the captcha');
     Male <input type="radio" name="male"  value="male"checked/> Female<input type="radio" value="female" name="male" /><br /></div>
    
     <label for="dance">Hobbies: </label>
-    Dancing<input type="checkbox" class="messageCheckbox" name="dance" value="Dance"/>
+    Dancing<input type="checkbox" class="messageCheckbox" name="dance" value="Dancing"/>
     Singing<input type="checkbox" name="singing" class="messageCheckbox" value="Singing" />
     Sports<input type="checkbox" class="messageCheckbox" name="hobbies" value="Sports"/>
     Art<input type="checkbox" name="hobbies" class="messageCheckbox" value="Art"/>

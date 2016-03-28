@@ -11,6 +11,6 @@ $_SESSION["tab"]="newReq";
 	header("Location: /portal/admin.php");
 	}
 	else
-	echo"hutiya";
-echo "<br> ".$id."hola";
+	echo"Action Failed";
+//echo "<br> ".$id."hola";
 ?>
